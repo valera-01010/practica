@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Экопункт · V26 — План сдачи</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Добавлено для PWA -->
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#24547a">
+</head>
+<body>
+  <header>
+    <p>Экопункт · V26</p>
+  </header>
+
+  <main class="page">
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="catalog.html">Каталог</a>
+    </nav>
+
+    <h1>План сдачи</h1>
+    <p>Учебная форма. Данные пока не сохраняются.</p>
+
+    <form class="request-form" action="form.html" method="get">
+      <div class="form-group">
+        <label for="packs">Количество упаковок</label>
+        <!-- В лекции для количества используется id="quantity", переименуем для точного соответствия -->
+        <input type="number" id="quantity" name="quantity" min="1" step="1" value="3" required>
+      </div>
+
+      <div class="form-group">
+        <label for="note">Описание материала</label>
+        <textarea id="note" name="note" rows="3" placeholder="Опишите ваши пожелания"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="material">Название материала</label>
+        <!-- В лекции для списка используется id="item" -->
+        <select id="item" name="item" required>
+          <option value="">Выберите из списка</option>
+          <option value="plastic">Пластик</option>
+          <option value="glass">Стекло</option>
+          <option value="paper">Бумага</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="volume">Объём упаковки</label>
+        <input type="range" id="volume" name="volume" min="1" max="5" value="3">
+        <div class="range-labels">
+          <span>1 — Малый</span>
+          <span>5 — Большой</span>
+        </div>
+      </div>
+
+      <div class="checkbox-group">
+        <input type="checkbox" id="clean" name="clean" checked>
+        <label for="clean">Материал очищен</label>
+      </div>
+
+      <div class="checkbox-group">
+        <input type="checkbox" id="consult" name="consult">
+        <label for="consult">Нужна консультация</label>
+      </div>
+
+      <button type="submit">Запланировать сдачу</button>
+
+      <!-- Шаг 1: Абзац для результата после кнопки -->
+      <p id="result" role="status" aria-live="polite"></p>
+    </form>
+
+    <p class="hint-text">Показан фокус кнопки после перехода клавишей Tab.</p>
+    <p><a href="index.html">Назад</a></p>
+
+    <footer>
+      <p>Учебный прототип · Вариант 26</p>
+    </footer>
+  </main>
+
+  <!-- Шаг 2: Подключение скрипта -->
+  <script src="form.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Экопункт · V26 — Главная</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Добавлено для PWA -->
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="theme-color" content="#24547a">
+</head>
+<body>
+  <header>
+    <p>Экопункт · V26</p>
+  </header>
+
+  <main class="page">
+    <nav>
+      <a href="catalog.html">Каталог</a>
+      <a href="form.html">Форма</a>
+    </nav>
+
+    <h1>Дайте вещам вторую жизнь (обновлено)</h1>
+    <p>Выберите материал для переработки</p>
+
+    <!-- Шаг 3: Абзац для статуса и счетчика -->
+    <p id="status" role="status"></p>
+
+    <!-- Шаг 5 + Доп. заданыие 1: Кнопки и список -->
+    <button id="show-names" type="button">Показать названия</button>
+    <button id="hide-names" type="button">Скрыть названия</button>
+    <ul id="names"></ul>
+
+    <div class="hero-image">
+      <img src="images/item1.png" alt="Пластик">
+    </div>
+
+    <p>Три предложения для выбора. Выберите материал для переработки.</p>
+
+    <div class="main-actions">
+      <a href="catalog.html">Открыть каталог</a>
+      <a href="form.html">Запланировать сдачу</a>
+    </div>
+
+    <footer>
+      <p>Учебный прототип · Вариант 26</p>
+    </footer>
+  </main>
+
+  <script src="catalog.js" defer></script>
+</body>
+</html>

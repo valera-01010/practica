@@ -1,0 +1,322 @@
+/* --- Базовое --- */
+* { box-sizing: border-box; }
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  background: #F7EEFA;
+  color: #392844;
+}
+
+/* --- Шапка --- */
+header {
+  background: #754383;
+  color: #FFFFFF;
+  padding: 15px 20px;
+}
+
+header p {
+  margin: 0 auto;
+  max-width: 56rem;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* --- Основная часть --- */
+main.page {
+  width: 92%;
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* --- Меню --- */
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+nav a {
+  display: inline-block;
+  padding: 6px 16px;
+  background: #FFFFFF;
+  color: #754383;
+  border: 2px solid #754383;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+nav a:hover {
+  background: #754383;
+  color: #FFFFFF;
+}
+
+/* --- Заголовки и текст --- */
+h1 {
+  color: #754383;
+  font-size: 24px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+h2 {
+  color: #754383;
+  font-size: 20px;
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+a {
+  color: #754383;
+  text-decoration: underline;
+}
+
+/* --- Картинка на главной --- */
+.hero-image {
+  background: #E8F4F1;
+  padding: 30px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+.hero-image img {
+  max-width: 100px;
+  height: auto;
+}
+
+/* --- Ссылки на главной --- */
+.main-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 15px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.main-actions a {
+  color: #754383;
+  font-size: 16px;
+  text-decoration: underline;
+}
+
+.main-actions a:hover {
+  text-decoration: none;
+}
+
+/* --- Каталог: Flexbox --- */
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  background: #FFFFFF;
+  border: 4px solid #754383;
+  border-radius: 0.5rem;
+  padding: 15px;
+  flex: 1 1 100%;
+}
+
+.card-image-wrapper {
+  background: #E8F4F1;
+  padding: 20px;
+  text-align: center;
+  margin: 15px 0;
+}
+
+.card img {
+  max-width: 100px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.card .specs {
+  background: #754383;
+  color: #FFFFFF;
+  padding: 0.5rem;
+  font-weight: bold;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.card .description {
+  background: #FEF3C7;
+  color: #78350F;
+  padding: 0.5rem;
+  border-radius: 4px;
+  margin-bottom: 0;
+}
+
+/* --- 768 px и шире: две карточки в ряд, третья внизу --- */
+@media (min-width: 768px) {
+  .card {
+    flex: 0 0 calc(50% - 10px);
+  }
+  .card:nth-child(3) {
+    flex: 0 0 100%;
+  }
+}
+
+/* --- Форма --- */
+.request-form {
+  background: #FFFFFF;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #E0D0E8;
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="number"],
+textarea,
+select {
+  font: inherit;
+  padding: 10px;
+  border: 2px solid #754383;
+  border-radius: 4px;
+  background: #FFFFFF;
+  color: #392844;
+  width: 100%;
+}
+
+/* --- Ползунок --- */
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  background: transparent;
+  margin: 10px 0;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 6px;
+  cursor: pointer;
+  background: #E0D0E8;
+  border-radius: 3px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #754383;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -7px;
+}
+
+input[type="range"]::-moz-range-track {
+  width: 100%;
+  height: 6px;
+  cursor: pointer;
+  background: #E0D0E8;
+  border-radius: 3px;
+}
+
+input[type="range"]::-moz-range-thumb {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #754383;
+  cursor: pointer;
+  border: none;
+}
+
+.range-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #392844;
+  margin-top: 5px;
+}
+
+/* --- Чекбоксы --- */
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #754383;
+}
+
+.checkbox-group label {
+  margin: 0;
+  font-weight: normal;
+}
+
+/* --- Кнопка --- */
+.request-form button {
+  background: #754383;
+  border: 2px solid #754383;
+  color: #FFFFFF;
+  padding: 12px 20px;
+  border-radius: 4px;
+  font: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.request-form button:hover {
+  background: #5a3265;
+  border-color: #5a3265;
+}
+
+/* --- Фокус --- */
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+button:focus-visible {
+  outline: 3px solid #C2410C;
+  outline-offset: 3px;
+}
+
+/* --- Подвал --- */
+footer {
+  margin-top: 40px;
+  padding-top: 15px;
+  font-size: 14px;
+  color: #392844;
+  border-top: 1px solid #754383;
+}
+
+/* --- Подсказка --- */
+.hint-text {
+  font-size: 14px;
+  color: #392844;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
